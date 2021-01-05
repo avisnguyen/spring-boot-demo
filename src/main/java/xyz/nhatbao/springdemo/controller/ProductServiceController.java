@@ -3,6 +3,7 @@ package xyz.nhatbao.springdemo.controller;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import xyz.nhatbao.springdemo.exception.ProductNotFoundException;
 import xyz.nhatbao.springdemo.model.Product;
 
 import java.util.HashMap;
@@ -43,6 +44,8 @@ public class ProductServiceController {
     //  update a product by PUT method
     @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
     public ResponseEntity<Object> updateProduct(@PathVariable("id") String id, @RequestBody Product product) {
+        //  if product not found throw ProductNotFound exception
+        if (!productRepository.containsKey(id)) throw new ProductNotFoundException();
         return new ResponseEntity(productRepository.put(id, product), HttpStatus.OK);
     }
 
