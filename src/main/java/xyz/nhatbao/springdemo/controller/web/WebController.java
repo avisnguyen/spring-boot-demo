@@ -9,4 +9,10 @@ public class WebController {
     public String index() {
         return "index";
     }
+
+    // Internationalization
+    @RequestMapping(value = "/locale")
+    public String locale() {
+        return "locale";
+    }
 }
