@@ -17,23 +17,23 @@ public class Scheduler {
         String strDate = sdf.format(now);
         System.out.println("Java cron job expression:: " + strDate);
     }
-
-    //    execute the tasks at the specific time, not wait for the completion of previous task
-    @Scheduled(fixedRate = 1000)
-    public void fixedRateSch() {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
-
-        Date now = new Date();
-        String strDate = sdf.format(now);
-        System.out.println("Fixed Rate scheduler:: " + strDate);
-    }
-
-    //    execute the tasks at the specific time, not wait for the completion of previous task
-    @Scheduled(fixedDelay = 1000, initialDelay = 3000)
-    public void fixedDelaySch() {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
-        Date now = new Date();
-        String strDate = sdf.format(now);
-        System.out.println("Fixed Delay scheduler:: " + strDate);
-    }
+//
+//    //    execute the tasks at the specific time, not wait for the completion of previous task
+//    @Scheduled(fixedRate = 1000)
+//    public void fixedRateSch() {
+//        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
+//
+//        Date now = new Date();
+//        String strDate = sdf.format(now);
+//        System.out.println("Fixed Rate scheduler:: " + strDate);
+//    }
+//
+//    //    execute the tasks at the specific time, not wait for the completion of previous task
+//    @Scheduled(fixedDelay = 1000, initialDelay = 3000)
+//    public void fixedDelaySch() {
+//        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
+//        Date now = new Date();
+//        String strDate = sdf.format(now);
+//        System.out.println("Fixed Delay scheduler:: " + strDate);
+//    }
 }
